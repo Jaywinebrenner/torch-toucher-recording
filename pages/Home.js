@@ -4,6 +4,7 @@ import React, {useState, useRef, useEffect} from 'react'
 import PhotoSlider from './components/slider'
 import { useRouter } from 'next/router'
 
+
 export default function Home() {
 
   const photos = [
@@ -28,6 +29,7 @@ export default function Home() {
   console.log("Q", query.hasTransitioned);
   const [activePage, setActivePage] = useState("about");
   const myRef = useRef(null);
+  const router = useRouter();
   const executeScroll = () => myRef.current.scrollIntoView();
 
   const handleSetActivePage = (page) => {
@@ -36,16 +38,14 @@ export default function Home() {
   }
 
   useEffect(() => {
-    // const { hasTransitioned } = getQueryParams(window.location.search);
-    // console.log("has Transitioned", hasTransitioned);
     let left = document.querySelector('.home__left');
     setTimeout(() => {left.classList.add("slide-in");}, 150);
     if(query.hasTransitioned){
       let left = document.querySelector('.home__left');
       console.log("LEFT", left);
       setTimeout(() => {left.classList.add("slide-in");}, 150);
-      
     }
+    router.replace('/home', undefined, { shallow: true });
   }, []);
 
 
