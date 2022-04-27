@@ -42,8 +42,10 @@ export default function Home() {
     setTimeout(() => {left.classList.add("slide-in");}, 150);
     if(query.hasTransitioned){
       let left = document.querySelector('.home__left');
+      let aboutWrapper = document.querySelector('.about-wrapper');
       console.log("LEFT", left);
       setTimeout(() => {left.classList.add("slide-in");}, 150);
+      // setTimeout(() => {aboutWrapper.classList.add("fade-in");}, 150);
     }
     router.replace('/home', undefined, { shallow: true });
   }, []);
