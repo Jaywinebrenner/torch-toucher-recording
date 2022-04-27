@@ -1,13 +1,9 @@
 import Link from 'next/link';
-import React, {useState, useRef, useEffect} from 'react'
-import { useRouter } from 'next/router'
+import React from 'react'
+
 
 
 export default function Landing() {
-
-  const router = useRouter();
-  const [navTransitioning, setNavTransitioning] = useState(false)
-
 
   return (
     <div className="landing">
