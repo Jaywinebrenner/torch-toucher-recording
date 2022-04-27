@@ -1,9 +1,8 @@
-
 import React, {useState, useRef, useEffect} from 'react'
 import { useRouter } from 'next/router'
 
 
-export default function home() {
+export default function Home() {
 
   const photos = [
     {
@@ -126,6 +125,3 @@ export default function home() {
     </div>
   )
 }
-
-
-
