@@ -75,9 +75,9 @@ export default function Home({props}) {
         {activePage === 'clients' && <div className='clients'>
             <img src="/clients.png"/>
           <div className='clients-wrapper' >
-              {props && props[0].acf.client.map((c) => {
+              {props && props[0].acf.client.map((c, i) => {
                   return (
-                    <a href={c.url} target="_blank">{c.name}</a>
+                    <a key={`client-key=${i}`} href={c.url} target="_blank" rel="noreferrer">{c.name}</a>
                   )
               })}
               {/* <a>George Thorogood</a>
