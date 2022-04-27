@@ -1,108 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Staatliches&display=swap');
-
-h1, h2, h3, h4, h5, h6, a, p {
-    color: rgb(63, 63, 59);
-    font-family: 'Courier Prime', monospace;
-}
 
 .landing {
+    min-height: 100vh;
+    background-color: #ffd1a9;
     display: flex;
-    &__left {
-        background-color: rgb(249, 242, 194);
-        display:flex;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-
-        .logo {
-            width: 298px;
-        }
-        .link-wrapper {
-            padding-left: 40px;
-            position: relative;
-            img {
-                padding: 20px 0;
-                cursor: pointer;
-                height: 88px;
-            }
-            img:hover {
-                   background: url("/bg-1.svg") no-repeat center center fixed; 
-                    -webkit-background-size: cover;
-                    -moz-background-size: cover;
-                    -o-background-size: cover;
-                    background-size: cover; 
-                    opacity: .4;
-            }
-            .underline-image {
-                position: absolute;
-                left: 0;
-                top: 53px;
-            }
-            h3 {
-                font-size: 3rem;
-                color: rgb(63, 63, 59);
-                transition: .2s;
-            }
-            h3:hover {
-                opacity: .5;
-                cursor: pointer;
-            }
-        }
-
+    justify-content: center;
+    align-items: center;
+    .landing-logo-wrapper {
+        transform: translateY(-10%);
     }
-    &__right {
-       background-color: #ffd1a9;;
-    // background: url("/bg-1.svg") no-repeat center center fixed; 
-    // -webkit-background-size: cover;
-    // -moz-background-size: cover;
-    // -o-background-size: cover;
-    // background-size: cover;
-        padding: 40px;
-        width: 100%;
-        h1 {
-            font-size: 5rem;
-            line-height: .9;
-            margin: 0;
-        }
-        p {
-            font-size: 3rem;
-        }
-
-        .about-wrapper {
-            p {
-                padding-top: 10%;
-            }
-
-        }
-        .contact-wrapper {
-            p {
-                padding-top: 10%;
-            }
-            
-        }
-        .clients-wrapper {
-            
-        }
-        .photos-wrapper {
-            
-        }
-        .faq-wrapper {
-            
-        }
+    .landing-logo-wrapper:hover {
+        cursor: pointer;
     }
-}
-
-.underline {
-    text-decoration: underline;
-}
-
-.active-nav {
-    background: url("/bg-1.svg") no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover; 
-    pointer-events: none;
+    .yellow-fire {
+        position: absolute;
+        left:0;
+        z-index: -1;
+        display: none;
+        top: 3px;
+    }
+    .landing-logo-wrapper:hover .yellow-fire{
+        display: inherit;
+    }
 
 }
