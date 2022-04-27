@@ -24,7 +24,7 @@ export default function Home() {
 ]
 
   const { query } = useRouter();
-  console.log("Q", query.hasTransitioned);
+  // console.log("Q", query.hasTransitioned);
   const [activePage, setActivePage] = useState("about");
   const myRef = useRef(null);
   const router = useRouter();
@@ -44,7 +44,7 @@ export default function Home() {
     //   setTimeout(() => {left.classList.add("slide-in");}, 150);
     //   // setTimeout(() => {aboutWrapper.classList.add("fade-in");}, 150);
     // }
-    router.replace('/home', undefined, { shallow: true });
+    // router.replace('/home', undefined, { shallow: true });
   }, []);
 
 
