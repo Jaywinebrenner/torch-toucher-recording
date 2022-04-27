@@ -22,11 +22,8 @@ export default function Home() {
   },
 ]
 
-  const { query } = useRouter();
-  // console.log("Q", query.hasTransitioned);
   const [activePage, setActivePage] = useState("about");
   const myRef = useRef(null);
-//   const router = useRouter();
   const executeScroll = () => myRef.current.scrollIntoView();
 
   const handleSetActivePage = (page) => {
@@ -37,13 +34,6 @@ export default function Home() {
   useEffect(() => {
     let left = document.querySelector('.home__left');
     setTimeout(() => {left.classList.add("slide-in");}, 150);
-    // if(query.hasTransitioned){
-    //   let left = document.querySelector('.home__left');
-    //   // let aboutWrapper = document.querySelector('.about-wrapper');
-    //   setTimeout(() => {left.classList.add("slide-in");}, 150);
-    //   // setTimeout(() => {aboutWrapper.classList.add("fade-in");}, 150);
-    // }
-    // router.replace('/home', undefined, { shallow: true });
   }, []);
 
 
@@ -69,7 +59,6 @@ export default function Home() {
 
         {activePage === 'about' && <div className='about'>
           <div className='about-wrapper' >
-            {/* <h1>ABOUT TORCH TOUCHER RECORDING</h1> */}
             <img src="/about.png"/>
             <p>Recording, mixing, and mastering services. Eric Crespo at the controls–working out of my home studio.</p>
           </div>
@@ -77,17 +66,15 @@ export default function Home() {
 
         {activePage === 'contact' && <div className='contact'>
         <div className='contact-wrapper'>
-            {/* <h1>CONTACT</h1> */}
             <img src="/contact.png"/>
             <p>torchtoucherrecording@gmail.com</p>
             </div>
         </div>}
 
         {activePage === 'clients' && <div className='clients'>
-          <div className='clients-wrapper' >
-            {/* <h1>CLIENTS</h1> */}
             <img src="/clients.png"/>
-            <p>Kate Bush</p>
+          <div className='clients-wrapper' >
+            <a href='https://www.google.com' target="_blank">Kate Bush</a>
             <p>Danny Aiello</p>
             <p>Silver Chair</p>
             <p>Heino</p>
@@ -95,10 +82,8 @@ export default function Home() {
         </div>}
 
         {activePage === 'photos' && <div className='photos'>
-            {/* <h1>PHOTOS</h1> */}
             <img src="/photos.png"/>
           <div className='photos-wrapper' >
-            {/* <PhotoSlider/> */}
 
             {photos.map((p, i) => {
               return (
@@ -112,9 +97,8 @@ export default function Home() {
         </div>}
 
         {activePage === 'faq' && <div className='faq'>
-          <div className='faq-wrapper' >
-            {/* <h1>FAQ</h1> */}
             <img src="/faq.png"/>
+          <div className='faq-wrapper' >
             <p>FAQ ONE</p>
             <p>FAQ TWO</p>
             <p>FAQ THREE</p>
