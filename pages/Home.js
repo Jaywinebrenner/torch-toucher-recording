@@ -2,7 +2,7 @@ import React, {useState, useRef, useEffect} from 'react'
 import { useRouter } from 'next/router'
 
 
-export default function Home() {
+export default function home() {
 
   const photos = [
     {
