@@ -23,7 +23,12 @@ export default function Home({props}) {
 
   const [activePage, setActivePage] = useState("about");
   const myRef = useRef(null);
-  const executeScroll = () => myRef.current.scrollIntoView();
+//   const executeScroll = () => myRef.current.scrollIntoView();
+  const executeScroll = () => {
+      const right = document.querySelector('.home__right');
+      const bounds = right.getBoundingClientRect();
+    window.scrollTo({top: bounds.top, left: bounds.top, behavior: 'smooth' });
+  }
   const [loading, setLoading] = useState(false)
 
   const handleSetActivePage = (page) => {
@@ -35,8 +40,6 @@ export default function Home({props}) {
     let left = document.querySelector('.home__left');
     setTimeout(() => {left.classList.add("slide-in");}, 150);
   }, []);
-
-
 
   return (
     <div className="home">

@@ -42,6 +42,7 @@ a {
         transform: translateX(-315px);
         transition: .3s;
         width: 310px;
+        position:fixed;
         @media (max-width: 900px) {
             min-height: 0;
             border-bottom: none;
@@ -124,7 +125,7 @@ a {
         min-height: 877px;
         @media (max-width: 900px) {
             border-left: 5px solid rgb(63, 63, 59);
-            padding: 50px 50px 50px 50px;
+            padding: 50px 20px 50px 20px;
         }
         h1 {
             font-size: 5rem;
@@ -178,9 +179,15 @@ a {
             display: flex;
             flex-wrap: wrap;
             justify-content: flex-start;
+            @media (max-width: 900px) {
+                justify-content: center;
+            }
             .photo-wrapper {
                 height: 16rem;
                 margin: 0 1rem 3rem 0;
+                @media (max-width: 900px) {
+                    margin: 0 0 3rem 0;
+                }
                 img {
                     width: auto;
                     height: 100%;
