@@ -24,6 +24,7 @@ export default function Home({props}) {
   const [activePage, setActivePage] = useState("about");
   const myRef = useRef(null);
   const executeScroll = () => myRef.current.scrollIntoView();
+  const [loading, setLoading] = useState(false)
 
   const handleSetActivePage = (page) => {
     executeScroll();
@@ -91,13 +92,19 @@ export default function Home({props}) {
           <div className='photos-wrapper' >
 
               {props && props[0].acf.photo.map((p,i) => {
-                  return (
-                    <div key={`photo-key=${i}`} className="photo-wrapper">
-                    <img src={p.photo}/>
-                    <p>{p.caption}</p>
-                  </div>
-                  )
+                  if(!loading){
+                      return (
+                        <div key={`photo-key=${i}`} className="photo-wrapper">
+                            <img src={p.photo}/>
+                            <p>{p.caption}</p>
+                        </div>
+                      )
+                  } else {
+                      <img src='/spinner.gif'/>
+                  }
+
               })}
+             
 
             {/* {photos.map((p, i) => {
               return (
