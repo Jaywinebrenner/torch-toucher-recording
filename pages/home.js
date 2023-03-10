@@ -139,7 +139,7 @@ export default function Home({props}) {
                 {props && <div className='faq-wrapper'>
                   {props[0].acf.faqs.map((f)=> {
                     return (
-                      <p>{f.faq}</p>
+                      <p key={`faq-key=${i}`}>{f.faq}</p>
                     )
                   })}
                   
