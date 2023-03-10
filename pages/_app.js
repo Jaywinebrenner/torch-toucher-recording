@@ -2,10 +2,16 @@ import "../styles/app.scss";
 import Router from "next/router";
 import React, {useState, useRef, useEffect} from 'react'
 import Head from "next/head";
+import { emojiCursor } from 'cursor-effects';
 
 function MyApp({ Component, pageProps }) {
 
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    new emojiCursor({ emoji: ["🔥", "🔥", "🔥"] });
+  }, [])
+
 
   useEffect(() => {
     const start = () => {

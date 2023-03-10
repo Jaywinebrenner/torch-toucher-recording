@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Staatliches&display=swap');
+
+h1, h2, h3, h4, h5, h6, a, p, ul, li {
+    color: rgb(63, 63, 59);
+    font-family: 'Courier Prime', monospace;
+    font-weight: 100;
+}
+
+ul, li {
+    font-size: 1.5rem;
+}
+
+a {
+    font-size: 2rem;
+    color: rgb(63, 63, 59)!important;
+    font-weight: 100;
+    display: block;
+    padding: 20px 0;
+    cursor: pointer;;
+    &:hover {
+        text-decoration: underline;
+    }
+ }
+
+
+
+.homenew {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    border: 5px solid rgb(63, 63, 59);
+    height: 100vh;
+
+    // .section {
+    //     aspect-ratio: 1/ 1;
+    //     display: flex;
+    //     align-items: center;
+    //     padding: 5%;
+    //     background-color: #1E1E1E;
+    //     color: #fff;
+    // }
+    &__left {
+        background-color: red;
+        .logo-wrapper {
+            border-bottom: 5px solid rgb(63, 63, 59);
+            position: relative;
+            width: 200px;
+            .fire-only {
+                position: absolute;
+                left: 0;
+                z-index: -1;
+                @media (max-width: 900px) {
+                    display: none;
+                    left: 31.5%;
+                }
+            }
+            .blink-me {
+                animation: blinker 1s linear infinite;
+              }
+              
+              @keyframes blinker {
+                100% {
+                  opacity: 0;
+                }
+              }
+
+            @media (max-width: 900px) {
+                text-align: center;
+            }
+        }
+    }
+
+
+
+    &__middle {
+        background-color: blue;
+    }
+
+
+    &__right {
+        background-color: green;
+    }
+
+
+
+
+    .torch-wrapper {
+        // background-color: rgb(249, 242, 194);
+        width: 200px;
+    }
+
+
+    .slide-in {
+        transform: translateX(0);
+    }
+    
+    @keyframes fadeIn {
+        0% {opacity:0;}
+        100% {opacity:1;}
+    }
+
+}

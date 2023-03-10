@@ -1,7 +1,7 @@
 @import "components/home";
 @import "components/landing";
 @import "components/slider";
-
+@import "components/homenew";
 @import "~slick-carousel/slick/slick.css"; 
 @import "~slick-carousel/slick/slick-theme.css";
 
@@ -97,4 +97,42 @@ a {
     transform: rotate(360deg);
   }
 }
+}
+
+
+// body::-webkit-scrollbar {
+//   width: 6px; /* width of the entire scrollbar */
+// }
+
+// body::-webkit-scrollbar-track {
+//   background: transparent; /* color of the tracking area */
+//   mix-blend-mode: multiply;
+// }
+
+// body::-webkit-scrollbar-thumb {
+//   background-color: orange; /* color of the scroll thumb */
+//   border-radius: 0px; /* roundness of the scroll thumb */
+//   border: 0;
+// }
+
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ffd1a9;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(152, 12, 2);; 
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: red; 
 }

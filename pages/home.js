@@ -1,7 +1,12 @@
 import React, {useState, useRef, useEffect} from 'react'
 
+import About from './components/About';
+import Clients from './components/Clients';
+import Contact from './components/Contact';
+import Faq from './components/Faq';
+
 export default function Home({props}) {
-    console.log("props", props);
+    console.log("props", props[0].acf);
 
   const photos = [
     {
@@ -25,7 +30,7 @@ export default function Home({props}) {
   const myRef = useRef(null);
 //   const executeScroll = () => myRef.current.scrollIntoView();
   const executeScroll = () => {
-      const right = document.querySelector('.home__right');
+      const right = document.querySelector('.header');
       const bounds = right.getBoundingClientRect();
     window.scrollTo({top: bounds.top, left: bounds.top, behavior: 'smooth' });
   }
@@ -58,28 +63,45 @@ export default function Home({props}) {
       </div>
 
       
-      <div className='home__right' ref={myRef}>
+      <div className='header' ref={myRef}>
 
-        {activePage === 'about' && <div className='about'>
-          <div className='about-wrapper' >
-            <img src="/about.png"/>
-            {/* <p>Recording, mixing, and mastering services. Eric Crespo at the controls–working out of my home studio.</p> */}
-            {props && <div dangerouslySetInnerHTML={{ __html: props[0].acf.text}}/>}
+        {activePage === 'about' && 
+        <>
+          <div className='about'>
+            <div className='about-wrapper' >
+              <img src="/about.png"/>
+              {/* <p>Recording, mixing, and mastering services. Eric Crespo at the controls–working out of my home studio.</p> */}
+              {props && <div dangerouslySetInnerHTML={{ __html: props[0].acf.text}}/>}
+            </div>
           </div>
-        </div>}
+          <div className='about-body'>
+            <h2>Recording, mixing, and mastering services. Eric Crespo at the controls–working out of my home studio.</h2>
+          </div>
 
-        {activePage === 'contact' && <div className='contact'>
+       
+        </>
+        }
+
+        {activePage === 'contact' && 
+
+        <>
+        <div className='contact'>
         <div className='contact-wrapper'>
             <img src="/contact.png"/>
-            {/* <p>torchtoucherrecording@gmail.com</p> */}
-            {props && <p>{props[0].acf.email}</p>}
+
             </div>
-        </div>}
+        </div>
+        <div className='about-body'>
+            <h2>eric@crespo.com</h2>
+            <h2>503.666.6666</h2>
+          </div>
+        </>
+        }
 
         {activePage === 'clients' && <div className='clients'>
             <img src="/clients.png"/>
           <div className='clients-wrapper' >
-              {props && props[0].acf.client.map((c, i) => {
+              {props && props[0].acf.clients.map((c, i) => {
                   return (
                     <a key={`client-key=${i}`} href={c.url} target="_blank" rel="noreferrer">{c.name}</a>
                   )
@@ -94,11 +116,11 @@ export default function Home({props}) {
             <img src="/photos.png"/>
           <div className='photos-wrapper' >
 
-              {props && props[0].acf.photo.map((p,i) => {
+              {props && props[0].acf.photos.map((p,i) => {
                   if(!loading){
                       return (
                         <div key={`photo-key=${i}`} className="photo-wrapper">
-                            <img src={p.photo}/>
+                            <img src={p.photo.url}/>
                             <p>{p.caption}</p>
                         </div>
                       )
@@ -107,16 +129,6 @@ export default function Home({props}) {
                   }
 
               })}
-             
-
-            {/* {photos.map((p, i) => {
-              return (
-                <div key={`photo-key=${i}`} className="photo-wrapper">
-                  <img src={p.url}/>
-                  <p>Optional Caption</p>
-                </div>
-              )
-            })} */}
 
           </div>
         </div>}
@@ -124,18 +136,22 @@ export default function Home({props}) {
         {activePage === 'faq' && 
             <div className='faq'>
                 <img src="/faq.png"/>
-
-                {/* <div className='faq-wrapper' >
-                  <p>FAQ ONE</p>
-                  <p>FAQ TWO</p>
-                 <p>FAQ THREE</p>
-                </div> */}
-                {props && <div className='faq-wrapper' dangerouslySetInnerHTML={{ __html: props[0].acf.faq}}/>}
+                {props && <div className='faq-wrapper'>
+                  {props[0].acf.faqs.map((f)=> {
+                    return (
+                      <p>{f.faq}</p>
+                    )
+                  })}
+                  
+                  </div>}
 
             </div>
         }
 
       </div>       
+      <div className='torch-wrapper'>
+        <img src="/Torch_Gif.gif"/>
+      </div>
     </div>
   )
 }
