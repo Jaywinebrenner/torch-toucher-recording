@@ -166,16 +166,16 @@ a {
         }
         .about-body {
             background-color: rgb(226, 118, 118)!important;
-            /* padding: 0; */
-            /* margin: 0; */
             background-color: #ffd1a9;
             border: 5px solid rgb(63, 63, 59);
             width: 100%;
             padding: 50px;
             margin-top: 44px;
-            // border-right: none;
-
             width: 100%;
+            @media(max-width: 800px){
+                padding: 12px;
+            }
+
         }
         .contact-wrapper {
             p {
@@ -233,6 +233,13 @@ a {
             }
         }
     }
+}
+
+.fire-gif {
+    position: absolute;
+    bottom: 0;
+    right: -62px;
+    height: 70%;
 }
 
 .underline {

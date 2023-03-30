@@ -76,6 +76,7 @@ export default function Home({props}) {
           </div>
           <div className='about-body'>
             <h2>Recording, mixing, and mastering services. Eric Crespo at the controls–working out of my home studio.</h2>
+            <img className='fire-gif' src="fire.gif"/>
           </div>
 
        
@@ -94,6 +95,7 @@ export default function Home({props}) {
         <div className='about-body'>
             <h2>eric@crespo.com</h2>
             <h2>503.666.6666</h2>
+            <img className='fire-gif' src="fire.gif"/>
           </div>
         </>
         }
@@ -106,9 +108,7 @@ export default function Home({props}) {
                     <a key={`client-key=${i}`} href={c.url} target="_blank" rel="noreferrer">{c.name}</a>
                   )
               })}
-              {/* <a>George Thorogood</a>
-              <a>Benny Hill</a>
-              <a>Overkill</a> */}
+              <img className='fire-gif' src="fire.gif"/>
           </div>
         </div>}
 
@@ -129,6 +129,7 @@ export default function Home({props}) {
                   }
 
               })}
+              <img className='fire-gif' src="fire.gif"/>
 
           </div>
         </div>}
@@ -144,7 +145,7 @@ export default function Home({props}) {
                   })}
                   
                   </div>}
-
+                  <img className='fire-gif' src="fire.gif"/>
             </div>
         }
 
@@ -152,6 +153,7 @@ export default function Home({props}) {
       <div className='torch-wrapper'>
         <img src="/Torch_Gif.gif"/>
       </div>
+      
     </div>
   )
 }

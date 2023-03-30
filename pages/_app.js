@@ -43,7 +43,9 @@ function MyApp({ Component, pageProps }) {
         <div className="loader"></div>
       </div>
     ) : (
+      <>
       <Component {...pageProps} />
+      </>
     )}
   </>
   )
